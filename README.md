@@ -1,0 +1,1 @@
+# BaseApplicationBundle for Sulu CMS
