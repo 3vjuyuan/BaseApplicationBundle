@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright (c) 2014-present, San Wei Ju Yuan Tech Ltd. <https://www.3vjuyuan.com>
- * This file is part of fangjialaw.com
+ * This file is part of BaseApplicationBundle
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
