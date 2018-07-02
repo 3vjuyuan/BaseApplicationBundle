@@ -23,24 +23,22 @@
 
 namespace Savwy\SuluBundle\BaseApplicationBundle\DependencyInjection;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\Config\FileLocator;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
 
-class BaseApplicationExtension extends Extension
+class Configuration implements ConfigurationInterface
 {
     /**
      * {@inheritdoc}
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function getConfigTreeBuilder()
     {
-        $configuration = new Configuration();
-        $processedConfig = $this->processConfiguration( $configuration, $configs );
+        $treeBuilder = new TreeBuilder();
+        $rootNode = $treeBuilder->root('base_application');
+        $rootNode->children()
+            ->arrayNode( 'social_media_profile_types' )
+            ->prototype('scalar')->end();
 
-        $container->setParameter( 'base_application.social_media_profile_types', $processedConfig[ 'social_media_profile_types' ] );
-
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.xml');
+        return $treeBuilder;
     }
 }

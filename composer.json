@@ -2,7 +2,7 @@
   "name": "savwy/base-application-bundle",
   "type": "sulu-bundle",
   "description": "Base application bundle for Sulu CMS",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "keywords": ["sulu", "website", "application"],
   "authors": [
     {

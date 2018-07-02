@@ -18,7 +18,7 @@
  * For more details:
  * https://www.3vjuyuan.com/licenses.html
  *
- * @author Team Weave <weave@3vjuyuan.com>
+ * @author Team Delta <delta@3vjuyuan.com>
  */
 
 namespace Savwy\SuluBundle\BaseApplicationBundle\Admin;
