@@ -18,5 +18,12 @@
                  class="Savwy\SuluBundle\BaseApplicationBundle\Twig\DataHelper\ContentRenderTwigExtension">
             <tag name="twig.extension"/>
         </service>
+        <service id="savwy_data_helper.twig_extension.categories_tree"
+                 class="Savwy\SuluBundle\BaseApplicationBundle\Twig\CategoryTreeTwigExtension">
+            <tag name="twig.extension"/>
+            <argument type="service" id="sulu_category.category_manager" />
+            <argument type="service" id="sulu_media.media_manager"/>
+            <argument type="service" id="sulu_core.cache.memoize"/>
+        </service>
     </services>
 </container>
