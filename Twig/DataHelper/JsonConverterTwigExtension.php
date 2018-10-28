@@ -24,6 +24,7 @@
 namespace Savwy\SuluBundle\BaseApplicationBundle\Twig\DataHelper;
 
 use Savwy\SuluBundle\BaseApplicationBundle\DataProcessor\ContactDataProcessor;
+use Savwy\SuluBundle\BaseApplicationBundle\DataProcessor\MediaDataProcessor;
 use Savwy\SuluBundle\BaseApplicationBundle\DataProcessor\PageDataProcessor;
 use Savwy\SuluBundle\BaseApplicationBundle\DataProcessor\TextMediaDataProcessor;
 //use Zend\Hydrator\Reflection as ReflectionHydrator;
@@ -62,6 +63,9 @@ class JsonConverterTwigExtension extends \Twig_Extension
                 return (new ContactDataProcessor())->convertToJsonLdFormat($input);
             case 'TextMedia':
                 $dataProcessor = new TextMediaDataProcessor();
+                return call_user_func_array([$dataProcessor, 'convertToJSON'], array_merge([$input], $params));
+            case 'Media':
+                $dataProcessor = new MediaDataProcessor();
                 return call_user_func_array([$dataProcessor, 'convertToJSON'], array_merge([$input], $params));
             case 'Page':
                 $dataProcessor = new PageDataProcessor();
