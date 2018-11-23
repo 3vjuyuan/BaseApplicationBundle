@@ -38,6 +38,22 @@ class JsonConverterTwigExtension extends \Twig_Extension
         ];
     }
 
+    public function getFilters()
+    {
+        return [
+            new \Twig_SimpleFilter('savwy_json_decode', [$this, 'jsonDecode']),
+        ];
+    }
+
+    /**
+     * @param string $str
+     * @return mixed
+     */
+    public function jsonDecode(string $str)
+    {
+        return json_decode($str, true);
+    }
+
     //@todo According to the content type and schema type to convert to json schema
 
     /**

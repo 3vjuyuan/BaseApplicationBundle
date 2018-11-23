@@ -12,8 +12,6 @@ define(function() {
             let ckeditor = app.sandbox.ckeditor,
                 toolbar = ckeditor.getToolbar();
 
-            CKEDITOR.skinName = 'kama';
-
             ckeditor.addPlugin('colorbutton');
             ckeditor.addPlugin('image2');
             ckeditor.addPlugin('selectall');
